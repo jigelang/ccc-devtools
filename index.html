@@ -349,10 +349,10 @@
 			openDevMode() {
 				let initWin = () => {
 					if (window.cc) {
-						cc.js.getset(cc.Node.prototype, 'isLeaf', function () {
+						cc.js.set(cc.Node.prototype,'isLeaf',function (value) {
+						},false,true);
+						cc.js.get(cc.Node.prototype, 'isLeaf', function () {
 							return this.childrenCount === 0;
-						}, function (value) {
-
 						}, false, true);
 						let top = document.getElementById('top')
 						top.appendChild(document.getElementsByClassName('toolbar')[0]);
